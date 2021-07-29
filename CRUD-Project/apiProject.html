@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Show List</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="custom-style.css" >
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <style>
+        form>input {
+            display: block;
+        }
+
+    </style>
+</head>
+
+
+
+<body>
+    <div class = "container">
+    <main class="row">
+
+      <div id="layout" class="col-4 text-light">
+        <section id="postSection" class="col-6">
+            <h2>Add A New TV Show</h2>
+            <form>
+                <label for="tvshowName" class="form-label">Name:</label>
+                <input type="text" id="tvshowName" name="name" class="form-control" required>
+                <label for="tvshowGenre" class="form-label">Genre:</label>
+                <input type="text" id="tvshowGenre" name="genre" class="form-control" required>
+                <label for="tvshowRating" class="form-label">Rating:</label>
+                <input type="number" id="tvshowRating" name="rating" class="form-control" required min="1" max="10">
+                <label for="tvshowEpisodes" class="form-label">Episodes:</label>
+                <input type="number" id="tvshowEpisodes" name="episodes" class="form-control mb-2" required>
+
+                <button type="reset" class="btn btn-warning">Reset</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </section>
+         
+            <section id="putSection"class="col-6 text-light">
+              
+           <h2>Edit A TV Show</h2>
+            <form>
+              <label for="id" class="form-label">ID:</label>
+              <input type="text" id="id" name="id" class="form-control" required>
+              <label for="tvshowName" class="form-label">Name:</label>
+              <input type="text" id="tvshowName" name="name" class="form-control" required>
+              <label for="tvshowGenre" class="form-label">Genre:</label>
+              <input type="text" id="tvshowGenre" name="genre" class="form-control" required>
+              <label for="tvshowRating" class="form-label">Rating:</label>
+              <input type="number" id="tvshowRating" name="rating" class="form-control" required min="1" max="10">
+              <label for="tvshowEpisodes" class="form-label">Episodes:</label>
+              <input type="number" id="tvshowEpisodes" name="episodes" class="form-control mb-2" required>
+
+              <button type="reset" class="btn btn-warning">Reset</button>
+              <button  type="submit" class="btn btn-success">Update</button>
+          </form>
+        </section>
+      
+        </div>
+
+            <section class="col-7 text-light">
+                <h2>Search TV Show by the ID</h2>
+               <section id="tvshowIdSection" class="col-8 text-dark">
+                   
+ 
+                <label for="TVShowId" class="form-label">IDNumber </label>
+                <input id="TVShowId" type="number" class="form-control md-3" value="0" min="0">
+               
+                <br>
+                <button id="getByID" onclick="getByID();" class="btn btn-danger">Find Show</button>
+                <br>
+                <br>
+                <br>
+                <h2>TV Show:</h2>
+                </section>
+           
+            <section class="col-100 ">
+              <br>
+              <br>
+                <h2>LIST OF ALL TV SHOWS:</h2>
+                <section id="getAllSection" class="col-100 text-dark">
+                </section>
+           
+    </div>
+            
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+            crossorigin="anonymous"></script>
+    <script src="./apiProject.js"></script>
+</body>
+
+</html>
